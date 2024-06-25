@@ -1,0 +1,6 @@
+[package]
+name = "a-peer-to-peer-lending-system"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
