@@ -1,8 +1,3 @@
-/* 1.	System Architecture
-
-I'll use Solana as the primary platform for the blockchain layer due to its high throughput and low transaction costs. I'll develop smart contracts in Rust using Solana's programming model. Here's the structure for the main lending program:
-
-*/
 use solana_program::{
     account_info::AccountInfo,
     entrypoint,
@@ -45,4 +40,7 @@ pub fn process_instruction(
             user_management::process_instruction(program_id, accounts, &user_instruction.try_to_vec()?)
         }
         ProgramInstruction::Asset(asset_instruction) => {
-            asset_management::process_instruction(program_id
+            asset_management::process_instruction(program_id, accounts, &asset_instruction.try_to_vec()?)
+        }
+    }
+}
